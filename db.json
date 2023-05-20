@@ -1,0 +1,13 @@
+{
+  "employee": [
+    { "id": 1, "name": "json-server", "surname": "typicode", "jobStationId": 1 }
+  ],
+  "jobStation": [
+    { "id": 1, "name": "Çağrı Merkezi" },
+    { "id": 2, "name": "Çözüm Merkezi" },
+    { "id": 3, "name": "Kalite Birimi" },
+    { "id": 4, "name": "Onay Merkezi" },
+    { "id": 5, "name": "Saha Araştırma" },
+    { "id": 6, "name": "Beyaz Masa" }
+  ]
+}

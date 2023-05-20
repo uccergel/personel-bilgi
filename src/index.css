@@ -1,0 +1,14 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .header-width {
+      @apply max-w-5xl mx-auto mb-10 p-5 bg-[#3C6E71]/10 shadow-2xl;
+    }
+    .page-container {
+      @apply max-w-7xl mx-auto rounded-xl bg-[#3C6E71]/10 shadow-2xl  p-3;
+    }
+  }
+  
