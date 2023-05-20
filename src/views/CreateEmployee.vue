@@ -10,17 +10,20 @@
         <div>
           <div>
             <h1 class="title-heading text-lg">Kişisel Bilgiler</h1>
-            <div class="flex mb-4">
+            <div class="flex mb-4 space-x-10">
               <div class="flex flex-col space-y-4 my-auto">
                 <p class="font-semibold">Adı:</p>
                 <p class="font-semibold">Soyadı:</p>
                 <p class="font-semibold">TC Kimlik Numarası:</p>
-                <p class="font-semibold">Doğum Tarihi:</p> <!-- Tarih şeklinde yapılacak -->
-                <p class="font-semibold">Kan Grubu:</p> <!-- Liste şeklinde yapılacak -->
+                <p class="font-semibold">Doğum Tarihi:</p>
+                <!-- Tarih şeklinde yapılacak -->
+                <p class="font-semibold">Kan Grubu:</p>
+                <!-- Liste şeklinde yapılacak -->
                 <p class="font-semibold">Telefon Numarası:</p>
                 <p class="font-semibold">E-Posta Adresi:</p>
                 <p class="font-semibold">Adresi:</p>
-                <p class="font-semibold">Medeni Durumu:</p> <!-- Liste şeklinde yapılacak -->
+                <p class="font-semibold">Medeni Durumu:</p>
+                <!-- Liste şeklinde yapılacak -->
               </div>
               <form class="flex flex-col space-y-4 my-auto rounded-xl">
                 <input
@@ -43,11 +46,12 @@
                   placeholder="Doğum Tarihinizi Giriniz"
                   type="text"
                 />
-                <input
-                  v-model="userData.bloodGroup"
-                  placeholder="Kan Grubunuzu Seçiniz"
-                  type="text"
-                />
+                <select class="rounded-md p-1 m-auto" v-model="selected">
+                  <option disabled value="">Birini Seçiniz</option>
+                  <option v-for="value in bloodGroupData" :key="value">
+                    {{ value.name }}
+                  </option>
+                </select>
                 <input
                   v-model="userData.phoneNumber"
                   placeholder="Telefon Numaranızı Yazınız"
@@ -63,17 +67,35 @@
                   placeholder="Adresinizi Yazınız"
                   type="text"
                 />
-                <input
-                  v-model="userData.martialStatus"
-                  placeholder="Medeni Durumunuzu Seçiniz"
-                  type="text"
-                />
+                <select class="rounded-md p-1 m-auto" v-model="selected">
+                  <option disabled value="">Birini Seçiniz</option>
+                  <option v-for="value in martialStatusData" :key="value">
+                    {{ value.name }}
+                  </option>
+                </select>
               </form>
             </div>
           </div>
           <hr class="border-black mb-5" />
         </div>
         <!-- Eğitim Bilgileri -->
+        <!-- İş Bilgileri -->
+        <div>
+          <h1 class="title-heading text-lg">Çalışma Bilgileri</h1>
+          <div class="flex mb-4 space-x-10">
+            <div class="flex flex-col space-y-4 my-auto">
+              <p class="font-semibold">Çalıştığı Birim</p>
+            </div>
+            <form class="flex flex-col space-y-4 my-auto rounded-xl">
+              <select class="rounded-md p-1 m-auto" v-model="selected">
+                <option disabled value="">Birini Seçiniz</option>
+                <option v-for="value in bloodGroupData" :key="value">
+                  {{ value.name }}
+                </option>
+              </select>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -91,6 +113,8 @@ import { ref, inject } from 'vue'
 import { useRouter } from 'vue-router'
 import router from '../router'
 import UserPlusIcon from '../components/icons/UserPlusIcon.vue'
+const martialStatusData = ref([])
+const bloodGroupData = ref([])
 const appAxios = inject('appAxios')
 const userData = ref({
   name: null,
@@ -112,6 +136,14 @@ const userData = ref({
   // emergencyContactPersonName: null,
   // emergencyContactPersonSurname: null,
   // emergencyContactPersonPhoneNumber: null
+})
+
+appAxios.get('/martialStatus', martialStatusData.value).then((response) => {
+  martialStatusData.value = response?.data || []
+})
+
+appAxios.get('/bloodGroup', bloodGroupData.value).then((response) => {
+  bloodGroupData.value = response?.data || []
 })
 
 const onSave = () => {

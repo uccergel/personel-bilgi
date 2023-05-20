@@ -1,9 +1,33 @@
 {
   "employee": [
-    { "id": 1, "name": "json-server", "surname": "typicode", "jobStationId": 1 },
-    { "id": 2, "name": "deneme isim-1", "surname": "typicode-2", "jobStationId": 2 },
-    { "id": 3, "name": "deneme isim-2", "surname": "typicode-3", "jobStationId": 3 },
-    { "id": 4, "name": "deneme isim-3", "surname": "typicode-4", "jobStationId": 1 }
+    {
+      "id": 1,
+      "name": "json-server",
+      "surname": "typicode",
+      "jobStationId": 1,
+      "martialStatusId": 1
+    },
+    {
+      "id": 2,
+      "name": "deneme isim-1",
+      "surname": "typicode-2",
+      "jobStationId": 2,
+      "martialStatusId": 1
+    },
+    {
+      "id": 3,
+      "name": "deneme isim-2",
+      "surname": "typicode-3",
+      "jobStationId": 3,
+      "martialStatusId": 2
+    },
+    {
+      "id": 4,
+      "name": "deneme isim-3",
+      "surname": "typicode-4",
+      "jobStationId": 1,
+      "martialStatusId": 2
+    }
   ],
   "jobStation": [
     { "id": 1, "name": "Çağrı Merkezi" },
@@ -12,5 +36,35 @@
     { "id": 4, "name": "Onay Merkezi" },
     { "id": 5, "name": "Saha Araştırma" },
     { "id": 6, "name": "Beyaz Masa" }
+  ],
+  "martialStatus": [
+    { "id": 1, "name": "Evli" },
+    { "id": 2, "name": "Bekar" }
+  ],
+  "bloodGroup": [
+    {
+      "id": 1, "name": "A Rh+"
+    },
+    {
+      "id": 2, "name": "A Rh-"
+    },
+    {
+      "id": 3, "name": "B Rh+"
+    },
+    {
+      "id": 4, "name": "B Rh-"
+    },
+    {
+      "id": 5, "name": "AB Rh+"
+    },
+    {
+      "id": 6, "name": "AB Rh-"
+    },
+    {
+      "id": 7, "name": "0 Rh+"
+    },
+    {
+      "id": 8, "name": "0 Rh-"
+    }
   ]
 }

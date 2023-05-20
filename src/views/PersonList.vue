@@ -7,13 +7,17 @@
           <th>SN</th>
           <th>Adı Soyadı</th>
           <th>Çalıştığı Birim</th>
+          <th>Medeni Durumu</th>
+          <th>Kan Grubu</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="value in employeeData">
+        <tr v-for="value in employeeData" :key="value">
           <td>{{ value.id }}</td>
           <td>{{ value.name }} {{ value.surname }}</td>
           <td>{{ jobStationData[value.jobStationId].name }}</td>
+          <!-- <td>{{ martialStatusData[value.martialStatusId].name }}</td> -->
+          <!-- <td>{{ bloodGroupData[value.bloodGroupId].name }}</td> -->
         </tr>
       </tbody>
     </table>
@@ -21,8 +25,17 @@
       <span>Toplam Personel Sayısı: </span>
       <span>{{ employeeData.length }}</span>
     </div>
-    <select v-model="selected">
-      <span v-for="value in jobStationData"> {{ value.name }}</span>
+
+    <select class="rounded-md p-1 m-auto" v-model="selected">
+      <option v-for="value in jobStationData" :key="value">
+        {{ value.name }}
+      </option>
+    </select>
+
+    <select class="rounded-md p-1 m-auto" v-model="selected">
+      <option v-for="value in martialStatusData" :key="value">
+        {{ value.name }}
+      </option>
     </select>
   </div>
 </template>
@@ -33,6 +46,8 @@ import { inject, ref } from 'vue'
 const appAxios = inject('appAxios')
 const employeeData = ref({})
 const jobStationData = ref([])
+const martialStatusData = ref([])
+const bloodGroupData = ref([])
 
 appAxios.get('/employee', employeeData.value).then((response) => {
   employeeData.value = response?.data || []
@@ -41,4 +56,12 @@ appAxios.get('/employee', employeeData.value).then((response) => {
 appAxios.get('/jobStation', jobStationData.value).then((response) => {
   jobStationData.value = response?.data || []
 })
+
+appAxios.get('/martialStatus', martialStatusData.value).then((response) => {
+  martialStatusData.value = response?.data || []
+})
+
+appAxios
+  .get('/bloodGroup', bloodGroupData.value)
+  .then((response) => [(bloodGroupData.value = response?.data || [])])
 </script>
