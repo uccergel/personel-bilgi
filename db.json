@@ -1,6 +1,9 @@
 {
   "employee": [
-    { "id": 1, "name": "json-server", "surname": "typicode", "jobStationId": 1 }
+    { "id": 1, "name": "json-server", "surname": "typicode", "jobStationId": 1 },
+    { "id": 2, "name": "deneme isim-1", "surname": "typicode-2", "jobStationId": 2 },
+    { "id": 3, "name": "deneme isim-2", "surname": "typicode-3", "jobStationId": 3 },
+    { "id": 4, "name": "deneme isim-3", "surname": "typicode-4", "jobStationId": 1 }
   ],
   "jobStation": [
     { "id": 1, "name": "Çağrı Merkezi" },

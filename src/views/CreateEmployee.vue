@@ -119,7 +119,7 @@ const onSave = () => {
     .post('/employee', { ...userData.value })
     .then((created_employee_response) => {
       console.log(created_employee_response)
-      router.push({ name: 'PersonList' })
+      router.push({ name: 'PersonListPage' })
     })
 }
 </script>
