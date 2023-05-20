@@ -15,7 +15,7 @@
         <tr v-for="value in employeeData" :key="value">
           <td>{{ value.id }}</td>
           <td>{{ value.name }} {{ value.surname }}</td>
-          <td>{{ jobStationData[value.jobStationId].name }}</td>
+          <!-- <td>{{ jobStationData[value.jobStationId].name }}</td> -->
           <!-- <td>{{ martialStatusData[value.martialStatusId].name }}</td> -->
           <!-- <td>{{ bloodGroupData[value.bloodGroupId].name }}</td> -->
         </tr>
@@ -26,13 +26,13 @@
       <span>{{ employeeData.length }}</span>
     </div>
 
-    <select class="rounded-md p-1 m-auto" v-model="selected">
+    <select class="rounded-md p-1 m-auto">
       <option v-for="value in jobStationData" :key="value">
         {{ value.name }}
       </option>
     </select>
 
-    <select class="rounded-md p-1 m-auto" v-model="selected">
+    <select class="rounded-md p-1 m-auto">
       <option v-for="value in martialStatusData" :key="value">
         {{ value.name }}
       </option>

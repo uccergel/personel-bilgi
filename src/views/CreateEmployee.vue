@@ -46,7 +46,7 @@
                   placeholder="Doğum Tarihinizi Giriniz"
                   type="text"
                 />
-                <select class="rounded-md p-1 m-auto" v-model="selected">
+                <select class="rounded-md p-1 m-auto">
                   <option disabled value="">Birini Seçiniz</option>
                   <option v-for="value in bloodGroupData" :key="value">
                     {{ value.name }}
@@ -67,7 +67,7 @@
                   placeholder="Adresinizi Yazınız"
                   type="text"
                 />
-                <select class="rounded-md p-1 m-auto" v-model="selected">
+                <select class="rounded-md p-1 m-auto">
                   <option disabled value="">Birini Seçiniz</option>
                   <option v-for="value in martialStatusData" :key="value">
                     {{ value.name }}
@@ -87,9 +87,9 @@
               <p class="font-semibold">Çalıştığı Birim</p>
             </div>
             <form class="flex flex-col space-y-4 my-auto rounded-xl">
-              <select class="rounded-md p-1 m-auto" v-model="selected">
+              <select class="rounded-md p-1 m-auto">
                 <option disabled value="">Birini Seçiniz</option>
-                <option v-for="value in bloodGroupData" :key="value">
+                <option v-for="value in jobStationData" :key="value">
                   {{ value.name }}
                 </option>
               </select>
@@ -115,11 +115,12 @@ import router from '../router'
 import UserPlusIcon from '../components/icons/UserPlusIcon.vue'
 const martialStatusData = ref([])
 const bloodGroupData = ref([])
+const jobStationData = ref([])
 const appAxios = inject('appAxios')
 const userData = ref({
   name: null,
   surname: null,
-  jobStation: null
+  jobStation: null,
   // imageUrl: null,
   // phoneNumber: null,
   // address: null,
@@ -130,8 +131,8 @@ const userData = ref({
   // eMail: null,
   // startDateOfContactCenter: null,
   // startDateOfEmployment: null,
-  // martialStatus: null,
-  // bloodGroup: null,
+  martialStatus: null,
+  bloodGroup: null,
   // emergencyContactPersonKindship: null,
   // emergencyContactPersonName: null,
   // emergencyContactPersonSurname: null,
@@ -144,6 +145,10 @@ appAxios.get('/martialStatus', martialStatusData.value).then((response) => {
 
 appAxios.get('/bloodGroup', bloodGroupData.value).then((response) => {
   bloodGroupData.value = response?.data || []
+})
+
+appAxios.get("/jobStation", jobStationData.value).then((response)=>{
+  jobStationData.value = response?.data || []
 })
 
 const onSave = () => {

@@ -5,66 +5,116 @@
       "name": "json-server",
       "surname": "typicode",
       "jobStationId": 1,
-      "martialStatusId": 1
+      "martialStatusId": 1,
+      "bloodGroup": 2
     },
     {
       "id": 2,
       "name": "deneme isim-1",
       "surname": "typicode-2",
       "jobStationId": 2,
-      "martialStatusId": 1
+      "martialStatusId": 1,
+      "bloodGroup": 4
     },
     {
       "id": 3,
       "name": "deneme isim-2",
       "surname": "typicode-3",
       "jobStationId": 3,
-      "martialStatusId": 2
+      "martialStatusId": 2,
+      "bloodGroup": 3
     },
     {
       "id": 4,
       "name": "deneme isim-3",
       "surname": "typicode-4",
       "jobStationId": 1,
+      "martialStatusId": 2,
+      "bloodGroup": 7
+    },
+    {
+      "name": "deneme",
+      "surname": "deneme2",
+      "jobStation": null,
+      "id": 5,
+      "bloodGroup": 3,
       "martialStatusId": 2
+    },
+    {
+      "name": "test",
+      "surname": "teesttt",
+      "jobStation": null,
+      "id": 6
     }
   ],
   "jobStation": [
-    { "id": 1, "name": "Çağrı Merkezi" },
-    { "id": 2, "name": "Çözüm Merkezi" },
-    { "id": 3, "name": "Kalite Birimi" },
-    { "id": 4, "name": "Onay Merkezi" },
-    { "id": 5, "name": "Saha Araştırma" },
-    { "id": 6, "name": "Beyaz Masa" }
+    {
+      "id": 1,
+      "name": "Çağrı Merkezi"
+    },
+    {
+      "id": 2,
+      "name": "Çözüm Merkezi"
+    },
+    {
+      "id": 3,
+      "name": "Kalite Birimi"
+    },
+    {
+      "id": 4,
+      "name": "Onay Merkezi"
+    },
+    {
+      "id": 5,
+      "name": "Saha Araştırma"
+    },
+    {
+      "id": 6,
+      "name": "Beyaz Masa"
+    }
   ],
   "martialStatus": [
-    { "id": 1, "name": "Evli" },
-    { "id": 2, "name": "Bekar" }
+    {
+      "id": 1,
+      "name": "Evli"
+    },
+    {
+      "id": 2,
+      "name": "Bekar"
+    }
   ],
   "bloodGroup": [
     {
-      "id": 1, "name": "A Rh+"
+      "id": 1,
+      "name": "A Rh+"
     },
     {
-      "id": 2, "name": "A Rh-"
+      "id": 2,
+      "name": "A Rh-"
     },
     {
-      "id": 3, "name": "B Rh+"
+      "id": 3,
+      "name": "B Rh+"
     },
     {
-      "id": 4, "name": "B Rh-"
+      "id": 4,
+      "name": "B Rh-"
     },
     {
-      "id": 5, "name": "AB Rh+"
+      "id": 5,
+      "name": "AB Rh+"
     },
     {
-      "id": 6, "name": "AB Rh-"
+      "id": 6,
+      "name": "AB Rh-"
     },
     {
-      "id": 7, "name": "0 Rh+"
+      "id": 7,
+      "name": "0 Rh+"
     },
     {
-      "id": 8, "name": "0 Rh-"
+      "id": 8,
+      "name": "0 Rh-"
     }
   ]
 }
